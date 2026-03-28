@@ -1,1 +1,1 @@
-![s3-bucket](../../images/s3-bucket.PNG)
+![s3-bucket](./images/s3-bucket.PNG)
