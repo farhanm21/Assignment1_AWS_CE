@@ -1,0 +1,165 @@
+/* Root variables (optional but useful) */
+:root {
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --border-card: rgba(255, 255, 255, 0.1);
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --accent: #6366f1;
+}
+
+/* ─── CARD CONTAINER ───────────────────────── */
+.event-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-card);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.event-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ─── IMAGE ───────────────────────── */
+.event-card__image-wrap {
+  position: relative;
+  display: block;
+  height: 180px;
+  overflow: hidden;
+}
+
+.event-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.event-card:hover .event-card__image {
+  transform: scale(1.08);
+}
+
+/* Placeholder */
+.event-card__image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1f2937, #374151);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #9ca3af;
+}
+
+/* Category badge */
+.event-card__category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--cat-color, #94a3b8);
+  color: #111827;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 999px;
+}
+
+/* ─── BODY ───────────────────────── */
+.event-card__body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+/* Date */
+.event-card__date {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Title */
+.event-card__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.event-card__title a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.event-card__title a:hover {
+  color: var(--accent);
+}
+
+/* Venue */
+.event-card__venue {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ─── FOOTER ───────────────────────── */
+.event-card__footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Price */
+.event-card__price {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #facc15;
+}
+
+.event-card__price--free {
+  color: #22c55e;
+}
+
+/* Link */
+.event-card__link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.event-card__link:hover {
+  text-decoration: underline;
+  transform: translateX(3px);
+}
+
+/* ─── ANIMATION ───────────────────────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
